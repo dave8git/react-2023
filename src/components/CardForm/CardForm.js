@@ -1,15 +1,21 @@
 import styles from './CardForm.module.scss';
 import Button from '../Button/Button';
 import {useState} from 'react';
+import { useDispatch } from 'react-redux';
+import { addCard } from '../../redux/store';
+import shortid from 'shortid';
 
 const CardForm = props => {
     const [value, setValue] = useState("");
-    console.log(props.action);
+
+    const dispatch = useDispatch(); 
+
     const handleSubmit = e => {
         e.preventDefault(); 
-        props.action({title: value}, props.columnId);
+        dispatch(addCard({id: shortid(), columnId: props.columnId, title: value})); // to obiekt payload będzie użyty do utworzenia nowej karty, jest tu wszystko co jest potrzebne id, columnId, title
         setValue('');
-        }
+    }
+
     return (
         <form onSubmit={handleSubmit} >
             <input type="text" className={styles.cardForm} value={value} onChange={e => setValue(e.target.value)} />
