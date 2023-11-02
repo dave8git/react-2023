@@ -1,0 +1,37 @@
+@import '../../styles/settings.scss';
+
+nav {
+    background-color: darken($color-dark, 3%);
+    height: 5vh;
+    width: 100%;
+    color: #fff;
+}
+
+.navWrapper {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+
+i {
+    font-size: 24px;
+    color: white;
+    padding-top: 15px;
+}
+
+.ulNav {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+}
+
+li a {
+    text-decoration: none;
+    padding: 5px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+}
