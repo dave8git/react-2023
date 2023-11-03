@@ -2,19 +2,28 @@ const initialState = {
     columns: [
       {
         id: 1,
+        listId: 1,
         title: 'Books',
         icon: 'book',
       },
       {
         id: 2,
+        listId: 1,
         title: 'Movies',
         icon: 'film',
       },
       {
         id: 3,
+        listId: 1,
         title: 'Games',
         icon: 'gamepad',
-      }
+      }, 
+      {
+        id: 3,
+        listId: 2,
+        title: 'Files',
+        icon: 'tasks',
+      }, 
     ],
   
     cards: [
@@ -26,6 +35,19 @@ const initialState = {
       { id: 6, columnId: 3, title: 'Skyrim' }
     ], 
     searchString: "",
+    
+    lists: [
+        {
+            id: "1", 
+            title: 'Things to do...',
+            description: 'Interesting things I want to checkout'
+        }, 
+        {
+            id: "2", 
+            title: 'Test lists', 
+            description: 'Lorem Ipsum'
+        }
+    ]
   };
   
   export default initialState;

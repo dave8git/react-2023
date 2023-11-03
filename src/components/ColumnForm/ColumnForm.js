@@ -13,7 +13,7 @@ const ColumnForm = props => {
 
     const handleSubmit = e => {
         e.preventDefault(); 
-        dispatch(addColumn({id: shortid(), title: value, icon: icon})); // to w payload są wszystkie informacje konieczne do utworzenia nowej kolumny, czyli obiekt z id, title, oraz icon,
+        dispatch(addColumn({id: shortid(), listId: props.listId, title: value, icon: icon, })); // to w payload są wszystkie informacje konieczne do utworzenia nowej kolumny, czyli obiekt z id, title, oraz icon,
         setValue('');
         setIcon('');
     }
