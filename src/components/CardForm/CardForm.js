@@ -12,7 +12,7 @@ const CardForm = props => {
 
     const handleSubmit = e => {
         e.preventDefault(); 
-        dispatch(addCard({id: shortid(), columnId: props.columnId, title: value})); // to obiekt payload będzie użyty do utworzenia nowej karty, jest tu wszystko co jest potrzebne id, columnId, title
+        dispatch(addCard({id: shortid(), columnId: props.columnId, isFavorite: false, title: value})); // to obiekt payload będzie użyty do utworzenia nowej karty, jest tu wszystko co jest potrzebne id, columnId, title
         setValue('');
     }
 
