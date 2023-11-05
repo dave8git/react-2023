@@ -2,7 +2,7 @@ import styles from './Column.module.scss';
 import Card from '../Card/Card';
 import CardForm from '../CardForm/CardForm';
 import { useSelector } from 'react-redux';
-import { getFilteredCards } from '../../redux/store';
+import { getFilteredCards } from '../../redux/cardsRedux';
 
 const Column = props => {
     //const cards = useSelector(state => state.cards.filter(card => card.columnId === props.id && card.title.toLowerCase().includes(state.searchString))); // dla każdej kolumny wygeneruj tylko te karty w środku których id zgadza się z id kolumny przypisanym do karty

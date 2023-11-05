@@ -1,6 +1,6 @@
 import styles from './Favorite.module.scss';
 import PageTitle from '../PageTitle/PageTitle';
-import { getFavoriteCards } from '../../redux/store';
+import { getFavoriteCards } from '../../redux/cardsRedux';
 import { useSelector } from 'react-redux';
 import Card from '../Card/Card';
 const Favorite = () => {
@@ -12,7 +12,11 @@ const Favorite = () => {
         <>
             <PageTitle>Favorite</PageTitle>
             <p>Lorem Ipsum</p>
-            { favoriteCards.map(card => <Card key={card.id} isFavorite={card.isFavorite} title={card.title} id={card.id} />) }
+            {favoriteCards.length === 0 ? (
+                <p>No favorite cards.</p>
+            ) : (
+                favoriteCards.map(card => <Card key={card.id} isFavorite={card.isFavorite} title={card.title} id={card.id} />) 
+            )} 
         </>
     );
 };

@@ -2,7 +2,7 @@ import styles from './Card.module.scss';
 import clsx from 'clsx';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { favoriteCard } from '../../redux/store';
+import { favoriteCard, deleteCard } from '../../redux/cardsRedux';
 
 const Card = props => {
     const dispatch = useDispatch();
@@ -14,13 +14,21 @@ const Card = props => {
         dispatch(favoriteCard(id));
     }
 
+    const handleDelete = id => {
+        dispatch(deleteCard(id));
+    }
 
     return (
         <li className={styles.card}>
             {props.title}
-            <button onClick={() => {handleFavorite(props.id)}} className={clsx(styles.button, props.isFavorite && styles.favorite)}>
-                <span className='fa fa-star' />
-            </button>
+            <div>
+                <button onClick={() => { handleFavorite(props.id) }} className={clsx(styles.button, props.isFavorite && styles.favorite)}>
+                    <span className='fa fa-star' />
+                </button>
+                <button onClick={() => { handleDelete(props.id) }} className={styles.button}>
+                    <span className='fa fa-trash' />
+                </button>
+            </div>
         </li>
     );
 };
